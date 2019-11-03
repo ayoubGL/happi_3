@@ -35,19 +35,3 @@ urlpatterns += staticfiles_urlpatterns()
 
 
 
-# urlpatterns = [
-#    path('caracteristiques/',ListCaracteristiques.as_view(),name='car_details'),
-#    path('caracteristiques/<int:pk>',DetailCaracteristiques.as_view()),
-    
-#     path('lieux/',ListLieux.as_view()),
-#     path('lieux/<int:pk>',DetailLieux.as_view()),
-    
-    
-#     path('usagers/',ListUsagers.as_view()),
-#     path('usagers/<int:pk>',DetailUsagers.as_view()),
-    
-#     path('vehicules/',ListVehicules.as_view()),
-#     path('vehicules/<int:pk>',DetailVehicules.as_view()),
-    
-    
-# ]

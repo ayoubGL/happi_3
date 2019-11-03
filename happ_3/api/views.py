@@ -6,7 +6,7 @@ from .models import caracteristiques,lieux,usagers,vehicules, acc_data
 from .serializers import caracteristiquesSerializer, lieuxSerializer,usagersSerializer, vehiculesSerializer,accidentSerializer
 from rest_framework import viewsets
 
-
+# custom pagination used to paginate through the different tables
 
 class custumpagination(PageNumberPagination):
     page_size = 10
@@ -25,6 +25,8 @@ class custumpagination(PageNumberPagination):
                 'records':data
             }
         )
+    
+# custom pagination used to paginate the accident data
 class paginationAccident(PageNumberPagination):
     page_size = 3
     page_query_param = page_size
@@ -42,7 +44,8 @@ class paginationAccident(PageNumberPagination):
         })
 
     
-# if we want to user viewset that make things easy
+# View set to link the fetched data with serializers
+
 class CaracteristiquesViewset(viewsets.ModelViewSet):
     queryset = caracteristiques.objects.all()
     serializer_class = caracteristiquesSerializer
@@ -68,47 +71,3 @@ class AccidentViewset(viewsets.ModelViewSet):
     serializer_class = accidentSerializer
     pagination_class = paginationAccident
 
-
-
-
-# if we want to empliment each view
-# class ListCaracteristiques(generics.ListCreateAPIView):
-#     queryset = caracteristiques.objects.all()
-#     serializer_class = caracteristiquesSerializer
-#     #lookup_field = 'Num_Acc'
-#     pagination_class  = custumpagination
-
-# class DetailCaracteristiques(generics.RetrieveUpdateDestroyAPIView):
-#     queryset = caracteristiques.objects.all()
-#     serializer_class = caracteristiquesSerializer
-#     pagination_class  = custumpagination
-    
-    
-    
-# class ListLieux(generics.ListCreateAPIView):
-#     queryset = lieux.objects.all()
-#     serializer_class = lieuxSerializer
-#     pagination_class  = custumpagination
-# class DetailLieux(generics.RetrieveUpdateDestroyAPIView):
-#     queryset = lieux.objects.all()
-#     serializer_class = lieuxSerializer
-
-    
-# class ListUsagers(generics.ListCreateAPIView):
-#     queryset = usagers.objects.all()
-#     serializer_class = usagersSerializer
-#     pagination_class  = custumpagination
-# class DetailUsagers(generics.RetrieveUpdateDestroyAPIView):
-#     queryset = usagers.objects.all()
-#     serializer_class = usagersSerializer
-
-
-    
-# class ListVehicules(generics.ListCreateAPIView):
-#     queryset = vehicules.objects.all()
-#     seriliazer_class = vehiculesSerializer
-#     pagination_class  = custumpagination
-# class DetailVehicules(generics.RetrieveUpdateDestroyAPIView):
-#     queryset = vehicules.objects.all()
-#     serializer_class = vehiculesSerializer
-    

@@ -1,8 +1,6 @@
 from django.db import models
 
-# Create your models here.
-
-
+# caracteristiques table 
 
 class caracteristiques(models.Model):
     Num_Acc  = models.BigIntegerField(blank=True, null=False,unique= True, primary_key=True)
@@ -27,6 +25,8 @@ class caracteristiques(models.Model):
     def __str__(self):
         return "{}".format(self.Num_Acc)
     
+
+# lieux table 
 class lieux(models.Model):
     Num_Acc = models.BigIntegerField(blank=True, null=False,unique= True, primary_key=True)
     cat_route = models.IntegerField( blank=True, null=True)
@@ -52,7 +52,7 @@ class lieux(models.Model):
     def __str__(self):
         return "{}".format(self.Num_Acc)
     
-        
+# usagers table         
 class usagers(models.Model):
     Num_Acc = models.BigIntegerField(unique = True, null = False, primary_key=True, blank = True )
     place = models.IntegerField(blank = True, null = True)
@@ -72,6 +72,7 @@ class usagers(models.Model):
     def __str__(self):
         return "{}".format(self.Num_Acc)
 
+# vehicules table 
 class vehicules(models.Model):
     Num_Acc = models.BigIntegerField(unique = True, null = False, primary_key=True, blank = True )
     senc = models.IntegerField(blank = True, null  = True)
@@ -88,6 +89,7 @@ class vehicules(models.Model):
     def __str__(self):
         return "{}".format(self.Num_Acc)
         
+# table contains all the data
 
 class acc_data(models.Model):
     Num_Acc = models.BigIntegerField(unique = True, null = False, primary_key=True, blank = True )

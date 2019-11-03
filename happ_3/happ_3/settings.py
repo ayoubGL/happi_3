@@ -78,12 +78,14 @@ WSGI_APPLICATION = 'happ_3.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':'happieno_3',
+        'NAME':'api_database',
         'USER':'root',
-        'PASSWORD':'par4.',
-        'HOST':'localhost',
+        'PASSWORD':'Password',
+        'HOST': '0.0.0.0',
+        'PORT': '3306',
     }
 }
+
 
 
 # Password validation

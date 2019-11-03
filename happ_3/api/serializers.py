@@ -2,6 +2,8 @@ from rest_framework import serializers
 from .models import caracteristiques,lieux,usagers,vehicules, acc_data
 
 
+# Serializers to convert the data to a json format
+
 class caracteristiquesSerializer(serializers.ModelSerializer):
     
 
@@ -19,6 +21,7 @@ class usagersSerializer(serializers.ModelSerializer):
     class Meta:
         model = usagers
         fields = '__all__'
+        
 class vehiculesSerializer(serializers.ModelSerializer):
     class Meta:
         model  = vehicules
