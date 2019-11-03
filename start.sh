@@ -23,7 +23,6 @@ cd happi_3
 echo "Start django api"
 python manage.py runserver
 
-x-www-browser http://localhost:8000
 
 
 
